@@ -55,5 +55,24 @@ describe("Thermostat", function() {
       thermostat.reset();
       expect(thermostat.temperature).toEqual(20);
     });
+    it('shows green if temperature less than 18 degrees', function() {
+      for(i = 0; i < 4; i++) {
+      thermostat.down();
+        }
+      expect(thermostat.temperature).toEqual(16);
+      expect(thermostat.colour()).toEqual('green');
+    });
+    it('shows yellow if temperature 18-25 degrees', function() {
+      expect(thermostat.temperature).toEqual(20);
+      expect(thermostat.colour()).toEqual('yellow');
+    });
+    it('shows red if temperature above 25 degrees', function() {
+      thermostat.powermode('off')
+      for(i = 0; i < 6; i++) {
+      thermostat.up();
+        }
+      expect(thermostat.temperature).toEqual(26);
+      expect(thermostat.colour()).toEqual('red');
+    });
   });
 });

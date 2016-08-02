@@ -3,7 +3,6 @@ function Thermostat() {
   this.MINIMUM_TEMPERATURE = 10;
   this.MAXIMUM_TEMPERATURE = 25;
   this.powersaving = true
-}
 
 Thermostat.prototype.up = function(){
   if(this.temperature === this.MAXIMUM_TEMPERATURE) {
@@ -31,4 +30,16 @@ Thermostat.prototype.powermode = function(mode){
 
 Thermostat.prototype.reset = function(){
   this.temperature = 20
+}
+
+
+Thermostat.prototype.colour = function(){
+  if(this.temperature < 18) {
+    return 'green'
+  } else if (this.temperature > 18 && this.temperature < 25) {
+    return 'yellow'
+  } else {
+    return  "red"
+  }
+}
 }

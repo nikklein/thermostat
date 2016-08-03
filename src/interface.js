@@ -1,5 +1,6 @@
 $( document ).ready(function() {
-  thermostat = new Thermostat();
+  var thermostat = new Thermostat();
+
   updateTemperature();
   $( "#temperature-up" ).click(function() {
     thermostat.up();
@@ -21,19 +22,16 @@ $( document ).ready(function() {
     thermostat.switchPowerSavingModeOff();
     updatePowerSaving();
   });
+  function updateTemperature() {
+    $( "#temperature" ).text(function() {
+      return thermostat.getCurrentTemperature();
+    });
+  }
+
+  function updatePowerSaving() {
+    $( "#power-saving-status" ).text(function() {
+      return thermostat.getPowerSavingMode();
+    });
+  }
+
 });
-
-function Interface() {
-}
-
-updateTemperature = function() {
-  $( "#temperature" ).text(function() {
-    return thermostat.getCurrentTemperature();
-  });
-}
-
-updatePowerSaving = function() {
-  $( "#power-saving-status" ).text(function() {
-    return thermostat.getPowerSavingMode();
-  });
-}

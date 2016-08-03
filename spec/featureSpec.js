@@ -35,7 +35,7 @@ describe('Feature Test:', function(){
 
   describe('power saving mode on ', function(){
     it ('has a max temp of 25', function() {
-      thermostat.powerSavingMode('on');
+      thermostat.switchPowerSavingModeOn();
       for (var i = 0; i < 5; i++) {
         thermostat.up();
       }
@@ -51,7 +51,7 @@ describe('Feature Test:', function(){
 
   describe('power saving mode off ', function(){
     it ('has a max temp of 32', function() {
-      thermostat.powerSavingMode('off');
+      thermostat.switchPowerSavingModeOff();
       for (var i = 0; i < 12; i++) {
         thermostat.up();
       }
@@ -81,7 +81,7 @@ describe('Feature Test:', function(){
       expect(thermostat.colour()).toEqual("yellow");
     });
     it ("is 'red' if temperature above or equal 25", function() {
-      thermostat.powerSavingMode('off');
+      thermostat.switchPowerSavingModeOff();
       for (var i = 0; i < 6; i++) {
         thermostat.up();
       }

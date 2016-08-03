@@ -58,4 +58,14 @@ describe('Feature Test:', function(){
       expect( function() {thermostat.up()} ).toThrowError('cannot go above maximum temperature');
     });
   });
+  describe('reset button', function(){
+    it ('resets temperature to 20', function() {
+      for (var i = 0; i < 3; i++) {
+        thermostat.up();
+      }
+      expect(thermostat.temperature).toEqual(23);
+      thermostat.reset();
+      expect(thermostat.temperature).toEqual(20);
+    });
+  });
 });

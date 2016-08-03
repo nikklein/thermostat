@@ -68,4 +68,25 @@ describe('Feature Test:', function(){
       expect(thermostat.temperature).toEqual(20);
     });
   });
+  describe('colour', function(){
+    it ("is 'green' if temperature less than 18", function() {
+      for (var i = 0; i < 3; i++) {
+        thermostat.down();
+      }
+      expect(thermostat.temperature).toEqual(17);
+      expect(thermostat.colour()).toEqual("green");
+    });
+    it ("is 'yellow' if temperature less than 25", function() {
+      expect(thermostat.temperature).toEqual(20);
+      expect(thermostat.colour()).toEqual("yellow");
+    });
+    it ("is 'red' if temperature above or equal 25", function() {
+      thermostat.powerSavingMode('off');
+      for (var i = 0; i < 6; i++) {
+        thermostat.up();
+      }
+      expect(thermostat.temperature).toEqual(26);
+      expect(thermostat.colour()).toEqual("red");
+    });
+  });
 });

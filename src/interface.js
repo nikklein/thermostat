@@ -25,8 +25,13 @@ $( document ).ready(function() {
   function updateTemperature() {
     $( "#temperature" ).text(function() {
       return thermostat.getCurrentTemperature();
+
     });
+
+    $('#temperature').attr('class', thermostat.colour());
+
   }
+
 
   function updatePowerSaving() {
     $( "#power-saving-status" ).text(function() {

@@ -40,11 +40,11 @@ Thermostat.prototype.reset = function() {
 
 Thermostat.prototype.colour = function() {
   if(this.temperature < this.LOWPOWER_TEMPERATURE) {
-    return 'green'
+    return 'low-usage'
   } else if (this.temperature < this.POWERSAVING_TEMPERATURE) {
-    return 'yellow'
+    return 'medium-usage'
   } else {
-    return 'red'
+    return 'high-usage'
   }
 };
 

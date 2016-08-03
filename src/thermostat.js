@@ -4,6 +4,7 @@ function Thermostat() {
   this.temperature = 20;
   this.MAXIMUM_TEMPERATURE = 32;
   this.POWERSAVING_TEMPERATURE = 25;
+  this.powerSavingMode('on');
 }
 
 Thermostat.prototype.up = function() {

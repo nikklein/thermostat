@@ -41,6 +41,12 @@ describe('Feature Test:', function(){
       }
       expect( function() {thermostat.up()} ).toThrowError('cannot go above maximum temperature');
     });
+    it ('has a max temp of 25 by default', function() {
+      for (var i = 0; i < 5; i++) {
+        thermostat.up();
+      }
+      expect( function() {thermostat.up()} ).toThrowError('cannot go above maximum temperature');
+    });
   });
 
   describe('power saving mode off ', function(){

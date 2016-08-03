@@ -47,3 +47,19 @@ Thermostat.prototype.colour = function() {
     return 'red'
   }
 };
+
+Thermostat.prototype.getCurrentTemperature = function() {
+  return this.temperature
+};
+
+Thermostat.prototype.isPowerSavingModeOn = function() {
+  return this.powerSavingMode
+};
+
+Thermostat.prototype.getPowerSavingMode = function() {
+  if (this.isPowerSavingModeOn()) {
+    return 'on'
+  } else {
+    return 'off'
+  }
+}

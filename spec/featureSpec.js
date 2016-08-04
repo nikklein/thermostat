@@ -74,11 +74,11 @@ describe('Feature Test:', function(){
         thermostat.down();
       }
       expect(thermostat.temperature).toEqual(17);
-      expect(thermostat.colour()).toEqual("green");
+      expect(thermostat.colour()).toEqual("low-usage");
     });
     it ("is 'yellow' if temperature less than 25", function() {
       expect(thermostat.temperature).toEqual(20);
-      expect(thermostat.colour()).toEqual("yellow");
+      expect(thermostat.colour()).toEqual("medium-usage");
     });
     it ("is 'red' if temperature above or equal 25", function() {
       thermostat.switchPowerSavingModeOff();
@@ -86,7 +86,7 @@ describe('Feature Test:', function(){
         thermostat.up();
       }
       expect(thermostat.temperature).toEqual(26);
-      expect(thermostat.colour()).toEqual("red");
+      expect(thermostat.colour()).toEqual("high-usage");
     });
   });
 });

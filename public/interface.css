@@ -1,29 +1,72 @@
 .low-usage {
   background-color: green;
+  font-size: 100px;
 }
 .medium-usage {
   background-color: yellow;
+  font-size: 100px;
 }
 .high-usage {
   background-color: red;
+  font-size: 100px;
 }
 
-div {
+div#2 {
 
+width: 200px;
+height:100px;
+}
+html {
+  background-image: url('./pic01.jpg');
+  background-size: cover;
+}
+
+/*h1#temperature {
+  font-size: 100px;
+}*/
+div {
   position:absolute;
   top:80px;
-  left:230px;
+  left:480px;
   display: block;
-  width: 50px;
+  width: 200px;
+  height: 200px;
   margin-left: auto;
   margin-right: auto;
+  border: none;
+  border-radius: 25px;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  border: none;
+  border-radius: 25px;
+  font-size: 150px;
+
 }
 .section1 {
 
   position:absolute;
-  top:180px;
+  top:350px;
+  left: 300px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.section.PSM {
+  position:relative;
+  left:230px;
+
+}
+span#power-saving-status {
+  font-size: 30px;
+}
+div.PSM {
+top: 220px;
+left: 540px;
+width: 70px;
+font-size: 15px
 }
 
 .button {

@@ -44,7 +44,7 @@ function displayWeather(city) {
 
     });
 
-    $('#temperature').attr('class', thermostat.colour());
+    $('#div2').attr('class', thermostat.colour());
 
   }
 

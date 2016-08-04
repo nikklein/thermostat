@@ -49,7 +49,8 @@ Thermostat.prototype.colour = function() {
 };
 
 Thermostat.prototype.getCurrentTemperature = function() {
-  return this.temperature
+  return this.temperature;
+
 };
 
 Thermostat.prototype.isPowerSavingModeOn = function() {
@@ -58,8 +59,8 @@ Thermostat.prototype.isPowerSavingModeOn = function() {
 
 Thermostat.prototype.getPowerSavingMode = function() {
   if (this.isPowerSavingModeOn()) {
-    return 'on'
+    return 'ON'
   } else {
-    return 'off'
+    return 'OFF'
   }
 }

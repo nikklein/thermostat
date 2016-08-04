@@ -6,6 +6,8 @@ function Thermostat() {
   this.PSMON = true
 }
 
+
+
 Thermostat.prototype.up = function() {
   this.temperature++;
 }

@@ -9,6 +9,9 @@ function Thermostat() {
 
 
 Thermostat.prototype.up = function() {
+  if (this.isMaximumTemperature()) {
+    return
+  }
   this.temperature++;
 }
 
@@ -25,4 +28,15 @@ Thermostat.prototype.psmon = function() {
 
 Thermostat.prototype.psmoff = function() {
   this.PSMON = false;
+}
+
+Thermostat.prototype.getCurrentTemp = function() {
+  return this.temperature;
+}
+
+Thermostat.prototype.isMaximumTemperature = function() {
+if(this.PSMON === false) {
+  return this.temperature === this.PSMOFF_MAX_TEMPERATURE;
+  }
+  return this.temperature === this.PSMON_MAX_TEMPERATURE;
 }

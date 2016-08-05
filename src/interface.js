@@ -33,6 +33,7 @@ function displayWeather(city) {
   $( "#powersaving-on" ).click(function() {
     thermostat.switchPowerSavingModeOn();
     updatePowerSaving();
+
   });
   $( "#powersaving-off" ).click(function() {
     thermostat.switchPowerSavingModeOff();

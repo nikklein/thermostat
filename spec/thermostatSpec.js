@@ -47,6 +47,14 @@ describe('Feature Test:', function(){
       }
       expect( function() {thermostat.up()} ).toThrowError('cannot go above maximum temperature');
     });
+    it("when PSM if off and temperature limit is reached, it resets to 25 after PSM is turned on", function() {
+      thermostat.switchPowerSavingModeOff();
+      for (var i = 0; i < 12; i++) {
+        thermostat.up();
+      }
+      thermostat.switchPowerSavingModeOn();
+      expect(thermostat.temperature).toEqual(25);
+    } );
   });
 
   describe('power saving mode off ', function(){
